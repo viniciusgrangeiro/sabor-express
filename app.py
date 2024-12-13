@@ -14,15 +14,15 @@ def exibir_opcoes():
 
 def escolher_opcoes():
     opcao_escolhida = int(input('Escolha uma opção: '))
-    # print(f'Você escolheu a opção {opcao_escolhida}')
-    if opcao_escolhida == 1:
-        print('Cadastrar restaurante')
-    elif opcao_escolhida == 2:
-        print('Listar restaurante')
-    elif opcao_escolhida == 3:
-        print('Ativar restaurante')
-    else:
-        finalizar_app()
+    match opcao_escolhida:
+        case 1:
+            print('Cadastrar restaurante\n')
+        case 2:
+            print('Listar restaurante\n')
+        case 3:
+            print('Ativar restaurante\n')
+        case _: # else
+            finalizar_app()
 
 def finalizar_app() :
     os.system('cls') # usado para limpar o terminal
