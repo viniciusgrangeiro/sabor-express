@@ -13,23 +13,32 @@ def exibir_opcoes():
     print('4. Sair\n')
 
 def escolher_opcoes():
-    opcao_escolhida = int(input('Escolha uma opção: '))
-    match opcao_escolhida:
-        case 1:
-            print('Cadastrar restaurante\n')
-        case 2:
-            print('Listar restaurante\n')
-        case 3:
-            print('Ativar restaurante\n')
-        case _: # else
-            finalizar_app()
+    try:
+        opcao_escolhida = int(input('Escolha uma opção: '))
+        match opcao_escolhida:
+            case 1:
+                print('Cadastrar restaurante\n')
+            case 2:
+                print('Listar restaurante\n')
+            case 3:
+                print('Ativar restaurante\n')
+            case 4: # 
+                finalizar_app()
+    except:
+        opcao_invalida()
 
 def finalizar_app() :
     os.system('cls') # usado para limpar o terminal
     print('Finalizando o app\n')
 
+def opcao_invalida():
+    print('Opção inválida')
+    input('Aperte alguma tecla para retornar ao menu principal\n')
+    main()
+
 
 def main():
+    os.system('cls')
     exibir_nome_programa()
     exibir_opcoes()
     escolher_opcoes()
